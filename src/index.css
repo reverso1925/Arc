@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-white;
+    font-family: 'Space Mono', monospace;
+    background-image: 
+      linear-gradient(rgba(18, 18, 18, 0.9) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(18, 18, 18, 0.9) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-position: center;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Pixelify Sans', display;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(168, 85, 247, 0.5);
+  }
+  
+  .box-glow {
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.15);
+  }
+
+  .box-glow-hover:hover {
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
+  }
+
+  .pixel-corners {
+    clip-path: polygon(
+      0px 4px,
+      4px 4px,
+      4px 0px,
+      calc(100% - 4px) 0px,
+      calc(100% - 4px) 4px,
+      100% 4px,
+      100% calc(100% - 4px),
+      calc(100% - 4px) calc(100% - 4px),
+      calc(100% - 4px) 100%,
+      4px 100%,
+      4px calc(100% - 4px),
+      0px calc(100% - 4px)
+    );
+  }
+}
